@@ -1,0 +1,52 @@
+name: compile-paper
+
+on:
+  push:
+    paths:
+      - 'main_area/**.tex'
+      - 'main_area/**.bib'
+      - 'fig/**'
+      - '.github/workflows/build.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  latex-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: pull texlive
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main_area/paper.tex
+          latexmk_use_lualatex: false
+          latexmk_shell_escape: false
+          extra_system_packages: "py3-pygments"
+          args: >-
+            -pdf
+            -interaction=nonstopmode
+            -halt-on-error
+            -output-directory=out
+
+      - name: stash artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-${{ github.sha }}
+          path: out/paper.pdf
+          retention-days: 30
+
+      - name: push pdf to branch
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          mkdir -p dist
+          cp out/paper.pdf dist/paper.pdf
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/paper.pdf
+          git diff --cached --quiet || git commit -m "chore: rebuild pdf [skip ci]"
+          git push
