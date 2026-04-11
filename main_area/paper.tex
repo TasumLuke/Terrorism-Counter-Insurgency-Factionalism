@@ -1,10 +1,43 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[12pt,a4paper]{article}
 
-\title{Paper}
-\author{Rimmo Loyi Lego}
-\author{Dr Patrick Chester}
-\date{April 2026}
+\usepackage[top=1.15in,bottom=1.15in,left=1.25in,right=1.25in]{geometry}
+\usepackage{setspace}
+\usepackage[authoryear,round,sort]{natbib}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage{xcolor}
+\usepackage{footmisc}
+\usepackage{threeparttable}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{makecell}
+\usepackage{ragged2e}
+
+\doublespacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\widowpenalty=10000
+\clubpenalty=10000
+\emergencystretch=2em
+
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.8em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.6em}{}
+
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\captionsetup[figure]{font=small,labelfont=bf,justification=justified,singlelinecheck=false}
+\captionsetup[table]{font=small,labelfont=bf,justification=justified,singlelinecheck=false}
 
 \begin{document}
 
