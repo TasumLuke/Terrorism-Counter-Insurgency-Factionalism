@@ -32,7 +32,7 @@
         {"year":2020,"incidents":23,"ext_killed":2,"ext_arrested":222,"sf_killed":0,"civ_killed":0,"surrendered":4,"kidnapped":33},
         {"year":2021,"incidents":47,"ext_killed":1,"ext_arrested":277,"sf_killed":0,"civ_killed":0,"surrendered":8,"kidnapped":54},
         {"year":2022,"incidents":31,"ext_killed":1,"ext_arrested":167,"sf_killed":0,"civ_killed":0,"surrendered":2,"kidnapped":36}
-      ],
+      ], 
       "factions": {
         "1999":2,"2000":2,"2001":3,"2002":3,"2003":3,"2004":3,"2005":3,
         "2006":3,"2007":4,"2008":4,"2009":4,"2010":4,"2011":5,"2012":5,
