@@ -43,7 +43,6 @@ def get_json(url, delay=0.8):
         print("  response wasn't JSON")
     return None
 
-
 def ucdp_india_conflicts():
     url = "https://ucdpapi.pcr.uu.se/api/conflicts/23.1?location=India&pagesize=50"
     print("  querying ucdp for India conflicts ...")
@@ -57,7 +56,6 @@ def ucdp_india_conflicts():
         start = str(c.get("StartDate", "?"))[:4]
         end   = str(c.get("EndDate", ""))[:4] or "ongoing"
         print(f"  [{cid:>5}]  {name:<55}  {start}–{end}")
-
 
 def ucdp_fatalities(conflict_id, label="conflict"):
     url = f"https://ucdpapi.pcr.uu.se/api/gedevents/23.1?ConflictId={conflict_id}&pagesize=1000"
@@ -129,7 +127,6 @@ def gdelt_timeline(query, start="1997", end="2023"):
         json.dump(data, f, indent=2)
     print(f"\n  → {fname}")
 
-
 def download_mha():
     os.makedirs("downloads/mha", exist_ok=True)
     for label, url in MHA_DOCS.items():
@@ -143,8 +140,7 @@ def download_mha():
             print(f"  → {path}")
         except Exception as e:
             print(f"  failed: {e}")
-
-
+            
 def wiki_revisions(page):
     params = urlencode({
         "action":  "query",
