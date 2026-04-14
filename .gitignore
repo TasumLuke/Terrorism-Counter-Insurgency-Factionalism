@@ -8,5 +8,5 @@ out/
 *.synctex.gz
 *.toc
 *.lot
-*.lof
+*.lof 
 .DS_Store
