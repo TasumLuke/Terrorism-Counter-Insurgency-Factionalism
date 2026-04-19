@@ -28,3 +28,10 @@ Loads the JSON, verifies every number in the paper, runs the regressions, builds
 - Mizoram pre-1999: Bhaumik (2009), Choudhury (1999)
 - Faction data: [SATP](https://www.satp.org)
 - NSDP: RBI Handbook
+## Build
+
+```bash
+make          # main paper
+make appendix # math appendix
+```
+CI rebuilds the PDF on push.
