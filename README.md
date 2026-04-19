@@ -22,3 +22,9 @@ python3 analysis.py
 Loads the JSON, verifies every number in the paper, runs the regressions, builds the figures.
 
 `toolkit.py` is case-agnostic (OFS, IVR, CPC, NegBin, ITS, mediation). `analysis.py` applies it to the India case.
+## Data
+
+- MHA Nagaland and Mizoram: [NE Insurgency profile (2023)](https://www.mha.gov.in/sites/default/files/2023-03/NE_Insurgency_profile.pdf)
+- Mizoram pre-1999: Bhaumik (2009), Choudhury (1999)
+- Faction data: [SATP](https://www.satp.org)
+- NSDP: RBI Handbook
