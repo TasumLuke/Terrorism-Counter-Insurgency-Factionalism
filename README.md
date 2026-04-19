@@ -12,3 +12,4 @@ research_tools/    analysis code
 dist/              compiled PDF
 Makefile           local build
 ```
+## Running it
